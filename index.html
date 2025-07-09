@@ -3,91 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>เกมเป่ายิ้งฉุบกับโฟ้ดดดดดด 💖</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #ffe6f0;
-      color: #d63384;
-      text-align: center;
-      padding: 20px;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
-    .choices {
-      margin: 20px;
-    }
-    button {
-      background: #ff99cc;
-      border: none;
-      border-radius: 15px;
-      padding: 15px 25px;
-      margin: 10px;
-      font-size: 1.5em;
-      cursor: pointer;
-      color: white;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #ff66b2;
-    }
-    .result {
-      font-size: 1.8em;
-      margin-top: 20px;
-    }
-    .score {
-      margin-top: 10px;
-      font-size: 1.2em;
-    }
-    .heart {
-      font-size: 2em;
-      animation: heartbeat 1.5s infinite;
-    }
-    @keyframes heartbeat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.3); }
-    }
-  </style>
+  <title>เกมเป่ายิ้งฉุบกับโฟ้ดด 💖</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>เกมเป่ายิ้งฉุบกับโฟ้ดดดดดด 💖</h1>
+  <h1>เกมเป่ายิ้งฉุบกับโฟ้ดด 💖</h1>
   <div class="choices">
     <button onclick="play('✊')">✊</button>
     <button onclick="play('✋')">✋</button>
     <button onclick="play('✌️')">✌️</button>
   </div>
   <div class="result" id="result">เลือกเลยน้า 💕</div>
-  <div class="score" id="score">โฟ้ดดด: 0 | เรา: 0</div>
+  <div class="score" id="score">โฟ้ดด: 0 | เรา: 0</div>
   <div class="heart">💓</div>
 
-  <script>
-    let userScore = 0;
-    let computerScore = 0;
-
-    function play(userChoice) {
-      const choices = ['✊', '✋', '✌️'];
-      const computerChoice = choices[Math.floor(Math.random() * 3)];
-      let resultText = `เราเลือก ${userChoice} | โฟ้ดดดดเลือก ${computerChoice}<br>`;
-
-      if (userChoice === computerChoice) {
-        resultText += "เสมอเลย 💞";
-      } else if (
-        (userChoice === '✊' && computerChoice === '✌️') ||
-        (userChoice === '✋' && computerChoice === '✊') ||
-        (userChoice === '✌️' && computerChoice === '✋')
-      ) {
-        userScore++;
-        resultText += "เราชนะ เย้! 💖";
-      } else {
-        computerScore++;
-        resultText += "โฟ้ดดดชนะ แงง 😚";
-      }
-
-      document.getElementById("result").innerHTML = resultText;
-      document.getElementById("score").innerText = `โฟ้ดดด: ${computerScore} | เรา: ${userScore}`;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
